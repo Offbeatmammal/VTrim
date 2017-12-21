@@ -4,8 +4,11 @@
 #! #2 thow many seconds to trim from start (eg if 1*60+14 then would mark-in at 1 min and 14 seconds)
 #! #3 how many seconds to trim from end (eg if 2*60+10) then mark-out with 2 mins and 10 seconds remaining)
 #! #4 (optional) output filename. If not specified will attempt to create from input filename
+#! Get total length of video
 duration=$(./ffprobe -i "${1}" -show_entries format=duration -v quiet -of csv="p=0")
+#! grab the starting point
 s_second=$(echo "${2}" | bc)
+#! calculate the end point (duration, subtract the end point, adjusting for the new start)
 nth_second=$(echo "${duration} - (${3}+${2})" | bc)
 #! if an output filename isn't specified, then use the input, replacing ' - ' with just '-', and spaces with underscores
 if [[ ! ${4} ]]; then
@@ -18,4 +21,5 @@ fi
 if [[ ${ofile} == ${1} ]]; then
   ofile=$(echo "out_${ofile}")
 fi
+#! call ffmpeg with relevant start and trim values
 ./ffmpeg -i "${1}" -ss ${s_second} -t ${nth_second} -c copy ${ofile}
