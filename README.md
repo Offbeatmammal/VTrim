@@ -10,12 +10,12 @@ Assumes availability of `ffmpeg` and `ffprobe` in the same directory. Users do n
 Usage
 -----
 
-vtrim input-file n1 n2 [output-file]
+`vtrim input-file n1 n2 [output-file]`
 
-- input-file: this is the name of the source file
-- n1: initial trim point in seconds (can be in the format 1*60+14 for one minute and 14 seconds)
-- n2: nuber of seconds to trim off the end
-- output-file: you can optionaly specify the output file name. If not specified then it will take the input filename and make some changes (' - ' becomes '-' and spaces become underscores), and if the filename is the same as the input name will add 'out_' to the front.
+- `input-file`: this is the name of the source file
+- `n1`: initial trim point in seconds (can be in the format 1*60+14 for one minute and 14 seconds)
+- `n2`: number of seconds to trim off the end
+- `output-file`: you can optionaly specify the output file name. If not specified then it will take the input filename and make some changes (' - ' becomes '-' and spaces become underscores), and if the filename is the same as the input name will add 'out_' to the front.
 
 Notes
 -----
