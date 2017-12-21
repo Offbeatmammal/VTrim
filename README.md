@@ -5,7 +5,7 @@ Operation should be lossless, and very performant - as the operations do not tra
 
 Requires
 --------
-Assumes availability of `ffmpeg` and `ffprobe` in the same directory. Users do not need to be familiar with their operation, but install the latest static build from [FFMPEG.org](http://ffmpeg.org)
+Assumes availability of `ffmpeg` and `ffprobe` in the same directory. Users do not need to be familiar with their operation, but should simply install the latest static build from [FFMPEG.org](http://ffmpeg.org)
 
 Usage
 -----
@@ -19,7 +19,8 @@ vtrim input-file n1 n2 [output-file]
 
 Notes
 -----
-While no transcoding takes place is the input and output file types match (eg mp4 to mp4, or mkv to mkv) if you make a change (eg mp4 to mkv) it will apply a conversion using default ffmpeg settings which will take much longer and will probably not give optimal results.
+- While no transcoding takes place is the input and output file types match (eg mp4 to mp4, or mkv to mkv) if you make a change (eg mp4 to mkv) it will apply a conversion using default ffmpeg settings which will take much longer and will probably not give optimal results.
+- If ffmpeg and ffprobe are in a different directory (depends on install method), paths should be adjusted in the script to accomodate
 
 ---
 
