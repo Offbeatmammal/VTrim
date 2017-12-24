@@ -27,7 +27,7 @@ Notes
 To-Do
 -----
 
-- Resiliance: make code more able to handle errors (especially when ffmpeg or ffprobe are not present)
+- Resiliance: make code more able to handle errors (especially when ffmpeg or ffprobe are not present, or if the target filename when renaming already exists)
 - Add support for removing chapters that have a specific metatdata tag (eg 'advertisment')
 
 
