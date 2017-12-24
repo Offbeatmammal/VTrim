@@ -19,7 +19,10 @@ else
 fi
 #! Make sure the input and output file names are different, fallback is to add "out_" to the start
 if [[ ${ofile} == ${1} ]]; then
-  ofile=$(echo "out_${ofile}")
+  infile=$(echo "in_${ofile}")
+  mv ${ofile} ${infile}
+else
+  infile=$(echo "${1}")
 fi
 #! call ffmpeg with relevant start and trim values
-./ffmpeg -i "${1}" -ss ${s_second} -t ${nth_second} -c copy ${ofile}
+./ffmpeg -i "${infile}" -ss ${s_second} -t ${nth_second} -c copy ${ofile}
