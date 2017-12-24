@@ -15,7 +15,7 @@ Usage
 - `input-file`: this is the name of the source file
 - `n1`: initial trim point in seconds (can be in the format 1*60+14 for one minute and 14 seconds)
 - `n2`: number of seconds to trim off the end
-- `output-file`: you can optionaly specify the output file name. If not specified then it will take the input filename and make some changes (' - ' becomes '-' and spaces become underscores), and if the filename is the same as the input name will add 'out_' to the front.
+- `output-file`: you can optionaly specify the output file name. If not specified then it will take the input filename and make some changes (' - ' becomes '-' and spaces become underscores), and if the filename is the same as the input name, the script will rename the input and add 'in_' to the front.
 
 Notes
 -----
